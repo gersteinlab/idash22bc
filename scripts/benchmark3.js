@@ -1,5 +1,5 @@
 // this benchmark inserts 1 PDFs, and retrieves the PDF after each chunk (58 chunks)
-// tracks query 2 time, and output file size
+// tracks insertion time, query 2 time, and output file size
 
 const { ethers } = require("hardhat")
 const fs = require("fs")
@@ -22,10 +22,10 @@ async function main() {
     let metadata = JSON.parse(fs.readFileSync(path.join(datafolder, "10000000001", "meta.json")))
 
     for (var j = 1; j < 60; j++) {
+        t0 = performance.now()
         for (const i in metadata) {
             chunkdata = fs.readFileSync(path.join(datafolder, "10000000001", "chunks", metadata[i]["chunk_file_name"]))
             if (i < j) {
-                let t0 = performance.now()
                 await pdfStorage.insertCertificateChunk(
                     [
                         metadata[i]["certificate_type"],
@@ -39,20 +39,22 @@ async function main() {
                     ],
                     chunkdata
                 )
-                let t1 = performance.now()
-                insertiontime.push(t1 - t0)
             }
         }
+        t1 = performance.now()
+        insertiontime.push(t1 - t0)
+        console.log(t1 - t0)
 
-        let t0 = performance.now()
+        t0 = performance.now()
         pdfData = await pdfStorage.getCertificatePDF(["*", "Biomedical Informatics Research", "Alexander Jimenez", "*", "*", "*", "*"], false)
-        let t1 = performance.now()
+        t1 = performance.now()
         query2time.push(t1 - t0)
         pdffilesize.push(pdfData.length)
         console.log(pdfData.length)
     }
 
     let dict = {
+        insertiontime: insertiontime,
         query2time: query2time,
         pdffilesize: pdffilesize,
     }
