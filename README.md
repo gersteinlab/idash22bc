@@ -1,8 +1,5 @@
-# Sample Hardhat Project
-
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
-
-Try running some of the following tasks:
+# idash22bc
+Solution to track 1 of [iDASH 2022 secure genome analysis competition](http://www.humangenomeprivacy.org/2022/)
 
 ## Requirements
  - [Nodejs](https://nodejs.org) 
@@ -22,7 +19,7 @@ simple deploy
 ```
 yarn hardhat run scripts/deploy.js
 ```
-Or edit hardhat.config.js with configs for your_network, and run
+Or edit hardhat.config.js with configs for `your_network`, and run
 ```
 yarn hardhat run scripts/deploy.js --network your_network
 ```
