@@ -1,0 +1,24 @@
+node_modules
+.env
+coverage
+coverage.json
+typechain
+typechain-types
+
+benchmark1.json
+benchmark2.json
+benchmark3.json
+benchmark1_output.pdf
+deploy2_output.pdf
+Training_Data/*
+!Training_Data/1
+Training_Data/1/*
+!Training_Data/1/10000000001/*
+
+.prettierrc
+training_data.tar.gz
+
+#Hardhat files
+cache
+artifacts
+
