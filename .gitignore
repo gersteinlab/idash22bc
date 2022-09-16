@@ -13,6 +13,7 @@ deploy2_output.pdf
 Training_Data/*
 !Training_Data/1
 Training_Data/1/*
+!Training_Data/1/10000000001/
 !Training_Data/1/10000000001/*
 
 .prettierrc
