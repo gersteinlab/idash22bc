@@ -33,7 +33,7 @@ yarn hardhat test test/test-short.js
 longer test and benchmarks require full training data (simulated PDFs/metadata from iDASH organizers)
 ```
 wget http://files.gersteinlab.org/public-docs/2022/11.22/training_data.tar.gz
-tar -xf archive.tar.gz
+tar -xf training_data.tar.gz
 yarn hardhat test
 yarn hardhat run scripts/benchmark1.js
 yarn hardhat run scripts/benchmark2.js
