@@ -1,5 +1,5 @@
 # idash22bc
-Solution to track 1 of [iDASH 2022 secure genome analysis competition](http://www.humangenomeprivacy.org/2022/)
+1st place winning solution to track 1 of the [iDASH 2022 secure genome analysis competition](http://www.humangenomeprivacy.org/2022/)
 
 ## Requirements
  - [Nodejs](https://nodejs.org) 
@@ -30,9 +30,9 @@ short test
 ```
 yarn hardhat test test/test-short.js
 ```
-longer test and benchmarks require full training data
+longer test and benchmarks require full training data (simulated PDFs/metadata from iDASH organizers)
 ```
-wget DL_LINK_HERE
+wget http://files.gersteinlab.org/public-docs/2022/11.22/training_data.tar.gz
 tar -xf archive.tar.gz
 yarn hardhat test
 yarn hardhat run scripts/benchmark1.js
